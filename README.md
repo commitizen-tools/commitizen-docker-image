@@ -2,6 +2,10 @@
 
 > commitizen now avaialble in docker 💪
 
+![Docker Pulls](https://img.shields.io/docker/pulls/commitizen/commitizen?style=flat-square)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/commitizen/commitizen/latest?style=flat-square)
+![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/commitizen/commitizen/latest?style=flat-square)
+
 ## Docker images
 
 We publish only major versions starting with `v2`.
