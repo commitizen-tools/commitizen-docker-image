@@ -1,0 +1,2 @@
+#!/bin/sh -e
+docker push registry.hub.docker.com/commitizen/commitizen
