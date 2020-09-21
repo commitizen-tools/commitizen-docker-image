@@ -20,7 +20,7 @@ We publish only major versions starting with `v2`.
 ## As Script
 
 ```bash
-docker run --rm -v $(pwd):/usr/src/project commitizen/commitizen:latest /bin/sh -c 'cz bump --changelog'
+docker run --rm -v $(pwd):/app commitizen/commitizen:latest /bin/sh -c 'cz bump --changelog'
 ```
 
 ## Inside container
@@ -29,7 +29,7 @@ Open a terminal inside docker with `cz` available and with the current directory
 This way we can run any `cz` command.
 
 ```bash
-docker run --rm -it -v $(pwd):/usr/src/project commitizen/commitizen:latest
+docker run --rm -it -v $(pwd):/app commitizen/commitizen:latest
 ```
 
 ## Contributing
