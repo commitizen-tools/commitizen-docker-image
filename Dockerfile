@@ -7,4 +7,4 @@ RUN apk add --update -t --no-cache git curl alpine-sdk
 
 RUN ["pip", "install", "commitizen>=2,<3"]
 
-CMD [ "cz version" ]
+CMD [ "cz", "version" ]
