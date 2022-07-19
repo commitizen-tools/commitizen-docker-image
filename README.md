@@ -4,7 +4,7 @@
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/commitizen/commitizen?style=flat-square)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/commitizen/commitizen/latest?style=flat-square)
-![MicroBadger Layers (tag)](https://img.shields.io/microbadger/layers/commitizen/commitizen/latest?style=flat-square)
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/commitizen/commitizen?style=flat-square)
 
 ## Docker images
 
