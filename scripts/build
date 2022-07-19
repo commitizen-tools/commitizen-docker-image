@@ -1,3 +1,11 @@
 #!/bin/sh -e
 set -x
-docker build -t registry.hub.docker.com/commitizen/commitizen:2 -t registry.hub.docker.com/commitizen/commitizen:latest .
+EXACT_VERSION="${EXACT_VERSION:-2}"
+
+# Also tag exact question, if not provided we repeat value '2' twice, but
+# it won't create any problem
+docker build \
+    -t registry.hub.docker.com/commitizen/commitizen:2 \
+    -t registry.hub.docker.com/commitizen/commitizen:latest \
+    -t "registry.hub.docker.com/commitizen/commitizen:$EXACT_VERSION" \
+    .

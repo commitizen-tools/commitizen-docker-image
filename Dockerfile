@@ -4,7 +4,9 @@ WORKDIR /app
 
 # Add dependencies
 RUN apk add --update -t --no-cache git curl alpine-sdk
+RUN ["pip", "install", "-U", "--no-cache-dir", "pip"]
 
-RUN ["pip", "install", "--no-cache-dir", "commitizen>=2,<3"]
+ARG CZ_VERSION=2.28.0
+RUN pip install --no-cache-dir commitizen==$CZ_VERSION
 
 CMD [ "cz", "version" ]
