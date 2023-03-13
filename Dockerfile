@@ -9,4 +9,6 @@ RUN ["pip", "install", "-U", "--no-cache-dir", "pip"]
 ARG CZ_VERSION=2.28.0
 RUN pip install --no-cache-dir commitizen==$CZ_VERSION
 
-CMD [ "cz", "version" ]
+ENTRYPOINT ["cz"]
+
+CMD [ "version" ]
