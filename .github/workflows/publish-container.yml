@@ -49,6 +49,6 @@ jobs:
           build-args: |
             CZ_VERSION=${{ steps.getversion.outputs.version }}
           tags: |
-            commitizen/commitizen:2
+            commitizen/commitizen:3
             commitizen/commitizen:latest
             commitizen/commitizen:${{ steps.getversion.outputs.version }}

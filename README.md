@@ -8,16 +8,17 @@
 
 ## Docker images
 
-We publish major versions starting with `v2` + latest exact v2.
+We publish major versions starting with `v3` + latest exact v3.
 
 | Tag                            | Description                                                     |
 | ------------------------------ | --------------------------------------------------------------- |
-| `commitizen/commitizen:latest` | Latest major version, at the moment v2                          |
+| `commitizen/commitizen:latest` | Latest major version, at the moment v3                          |
+| `commitizen/commitizen:3`      | Points to latest v3                                             |
+| `commitizen/commitizen:3.x`    | See [tags](https://hub.docker.com/r/commitizen/commitizen/tags) |
 | `commitizen/commitizen:2`      | Points to latest v2                                             |
 | `commitizen/commitizen:2.x`    | See [tags](https://hub.docker.com/r/commitizen/commitizen/tags) |
 
 This repo checks daily for the latest version and tries to publish it.
-
 
 ## Usage
 

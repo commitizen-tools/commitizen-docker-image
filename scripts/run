@@ -1,2 +1,2 @@
 #!/bin/sh -ex
-docker run --rm --name commitizen registry.hub.docker.com/commitizen/commitizen:2 /bin/sh -c "$@"
+docker run --rm --name commitizen registry.hub.docker.com/commitizen/commitizen:3 /bin/sh -c "$@"
