@@ -25,7 +25,10 @@ This repo checks daily for the latest version and tries to publish it.
 ## As Script
 
 ```bash
-docker run --rm -v $(pwd):/app commitizen/commitizen:latest /bin/sh -c 'cz bump --changelog'
+docker run --rm \
+  -v $(pwd):/app \
+  commitizen/commitizen:latest \
+  bump --changelog
 ```
 
 ## Inside container
@@ -34,7 +37,10 @@ Open a terminal inside docker with `cz` available and with the current directory
 This way we can run any `cz` command.
 
 ```bash
-docker run --rm -it -v $(pwd):/app commitizen/commitizen:latest
+docker run --rm -it \
+  --entrypoint /bin/sh \
+  -v $(pwd):/app \
+  commitizen/commitizen:latest
 ```
 
 ## Contributing
@@ -50,5 +56,5 @@ docker run --rm -it -v $(pwd):/app commitizen/commitizen:latest
 
 ```bash
 ./scripts/build
-./scripts/run 'cz ls'
+./scripts/cz ls
 ```
