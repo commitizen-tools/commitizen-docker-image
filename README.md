@@ -20,6 +20,22 @@ We publish major versions starting with `v3` + latest exact v3.
 
 This repo checks daily for the latest version and tries to publish it.
 
+## Migrating from `v2` to `v3` image
+
+We've moved this images from using `CMD` to `ENTRYPOINT` for `v3`.
+
+Where you were doing this:
+
+```sh
+docker run --rm --name commitizen registry.hub.docker.com/commitizen/commitizen:2 /bin/sh -c "cz ls"
+```
+
+Now you only need to do:
+
+```sh
+docker run --rm --name commitizen registry.hub.docker.com/commitizen/commitizen:3 ls
+```
+
 ## Usage
 
 ## As Script

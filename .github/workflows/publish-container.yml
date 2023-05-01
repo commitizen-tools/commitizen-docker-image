@@ -1,9 +1,9 @@
 name: Publish Docker image
 
 on:
-  # schedule:
-  #   # At the end of every day
-  #   - cron: '0 0 * * *'
+  schedule:
+    # At the end of every day
+    - cron: '0 0 * * *'
   workflow_dispatch:
     # inputs:
     #   run:
