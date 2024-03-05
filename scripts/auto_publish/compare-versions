@@ -26,5 +26,5 @@ else
     echo 'Creating file: `VERSION`'
     echo "$PIP_LATEST" > VERSION
     echo "Setting variable 'version'"
-    echo "::set-output name=version::$PIP_LATEST"
+    echo "version=$PIP_LATEST" >> "$GITHUB_OUTPUT"
 fi
