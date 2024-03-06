@@ -1,5 +1,8 @@
 FROM python:3-alpine
 
+LABEL org.opencontainers.image.source="https://github.com/commitizen-tools/commitizen"
+LABEL org.opencontainers.image.description="Commitizen is release management tool designed for teams"
+
 WORKDIR /app
 
 # Add dependencies

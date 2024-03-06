@@ -1,6 +1,6 @@
 # commitizen-docker-image
 
-> commitizen now avaialble in docker 💪
+> commitizen now available in docker 💪
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/commitizen/commitizen?style=flat-square)
 ![Docker Image Size (tag)](https://img.shields.io/docker/image-size/commitizen/commitizen/latest?style=flat-square)
