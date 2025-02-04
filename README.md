@@ -8,17 +8,23 @@
 
 ## Docker images
 
-We publish major versions starting with `v3` + latest exact v3.
+We publish major versions starting with `v4` + latest exact v4.
 
 | Tag                            | Description                                                     |
 | ------------------------------ | --------------------------------------------------------------- |
-| `commitizen/commitizen:latest` | Latest major version, at the moment v3                          |
+| `commitizen/commitizen:latest` | Latest major version, at the moment v4                          |
+| `commitizen/commitizen:4`      | Points to latest v4                                             |
+| `commitizen/commitizen:4.x`    | See [tags](https://hub.docker.com/r/commitizen/commitizen/tags) |
 | `commitizen/commitizen:3`      | Points to latest v3                                             |
 | `commitizen/commitizen:3.x`    | See [tags](https://hub.docker.com/r/commitizen/commitizen/tags) |
 | `commitizen/commitizen:2`      | Points to latest v2                                             |
 | `commitizen/commitizen:2.x`    | See [tags](https://hub.docker.com/r/commitizen/commitizen/tags) |
 
 This repo checks daily for the latest version and tries to publish it.
+
+## Migrating to `v4`
+
+Nothing has changed, python 3.8 support has been dropped.
 
 ## Migrating from `v2` to `v3` image
 
