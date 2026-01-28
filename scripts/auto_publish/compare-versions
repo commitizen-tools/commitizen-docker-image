@@ -1,7 +1,7 @@
 #!/bin/sh -e
 # This script retrieves latest version from pip
-# and all versions in docker hub for commitizen.
-# If the version EXISTS then exit with error and stop pipeline
+# and all versions in Docker Hub and GHCR for commitizen.
+# If the version EXISTS in either registry, exit and stop pipeline
 
 # requires pip
 pip_latest_version() {
@@ -13,16 +13,28 @@ list_cz_docker_versions() {
     curl -L -s 'https://registry.hub.docker.com/v2/repositories/commitizen/commitizen/tags/' | jq -r '.results[].name'
 }
 
+# requires curl & jq
+# GHCR API requires authentication, but we can list public package tags
+list_cz_ghcr_versions() {
+    curl -L -s 'https://ghcr.io/v2/commitizen-tools/commitizen/tags/list' | jq -r '.tags[]' 2>/dev/null || echo ""
+}
+
 PIP_LATEST=$(pip_latest_version)
 printf "latest pip version found:\n%s\n\n" "$PIP_LATEST"
 
-tags=$(list_cz_docker_versions)
-printf "Docker hub tags found:\n%s\n\n" "$tags"
+dockerhub_tags=$(list_cz_docker_versions)
+printf "Docker Hub tags found:\n%s\n\n" "$dockerhub_tags"
 
-if echo "${tags}" | grep -q "$PIP_LATEST"; then
-    echo "Version already present, skipping other steps..."
+ghcr_tags=$(list_cz_ghcr_versions)
+printf "GHCR tags found:\n%s\n\n" "$ghcr_tags"
+
+# Check if version exists in Docker Hub OR GHCR
+if echo "${dockerhub_tags}" | grep -q "$PIP_LATEST"; then
+    echo "Version already present on Docker Hub, skipping..."
+elif echo "${ghcr_tags}" | grep -q "$PIP_LATEST"; then
+    echo "Version already present on GHCR, skipping..."
 else
-    echo "Version not found... continue"
+    echo "Version not found on either registry... continue"
     echo 'Creating file: `VERSION`'
     echo "$PIP_LATEST" > VERSION
     echo "Setting variable 'version'"
