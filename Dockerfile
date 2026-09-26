@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.description="Commitizen is release management too
 WORKDIR /app
 
 # Add dependencies
-RUN apk add --update -t --no-cache git curl alpine-sdk
+RUN apk add --update -t --no-cache git git-lfs curl alpine-sdk
 RUN ["pip", "install", "-U", "--no-cache-dir", "pip"]
 
 ARG CZ_VERSION=4.1.1
